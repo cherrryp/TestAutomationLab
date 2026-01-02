@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.9.6 on darwin)" generated="2026-01-02T19:44:00.360075" rpa="false" schemaversion="5">
+<suite id="s1" name="Webdriver" source="/Users/cherryp/Documents/software en/TestAutomationLab/ChromeForTesting/webdriver.robot">
+<test id="s1-t1" name="TC_001: Start Chrome For Testing" line="10">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T19:44:00.507622" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102024d90&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T19:44:00.507308" elapsed="0.000339"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T19:44:00.507942" level="INFO">${chrome_options.binary_location} = /Users/cherryp/Documents/software en/TestAutomationLab/ChromeForTesting/chrome-mac-x64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T19:44:00.507749" elapsed="0.000213"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T19:44:00.508350" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x102024c10&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T19:44:00.508047" elapsed="0.000323"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T19:44:00.508600" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2026-01-02T19:44:00.508703" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2026-01-02T19:44:00.508758" level="FAIL">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="FAIL" start="2026-01-02T19:44:00.508456" elapsed="0.005295">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-01-02T19:44:00.513879" elapsed="0.000021"/>
+</kw>
+<status status="FAIL" start="2026-01-02T19:44:00.506672" elapsed="0.007353">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</test>
+<status status="FAIL" start="2026-01-02T19:44:00.361397" elapsed="0.152873"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Webdriver" id="s1" pass="0" fail="1" skip="0">Webdriver</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
